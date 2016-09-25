@@ -67,6 +67,37 @@ defaultValues(0, 1);
 defaultValues(0);
 
 // In arrow functions we don't need to bind 'this'
+// But also need to be careful how we use it
+
+// let person = {
+//   name: 'Tanveer',
+//   // This will work.
+//   sayName() {
+//     console.log(`My name is ${this.name}`);
+//   },
+//   // This will not work, because 'this' is not referring to person now.
+//   sayName: () => {
+//     console.log(`My name is ${this.name}`);
+//   }
+// };
+//
+// person.sayName();
+
+
+// Another use:
+
+// let person = {
+//   name: 'Tanveer',
+//   noms: ['Pizza', 'Burger', 'Ice Cream'],
+//   showNoms() {
+//     this.noms.forEach(function(nom) {
+//       // This will not work because 'this' does not refer to person anymore.
+//       console.log(`${this.name} wants a ${nom}`);
+//     });
+//   }
+// };
+//
+// person.showNoms();
 
 // var _this = this
 // $('.btn').click(function(event){
